@@ -15,7 +15,7 @@ steps:
     SonarQube: 'AZURE_TO_SONAR_2'
     scannerMode: 'CLI'
     configMode: 'manual'
-    cliProjectKey: 'jalugoqu_prueba_AYAAufzpYfStsm0BZxBD'
+    cliProjectKey: 'jalugoqu_prueba_AYALNI0KA_RvJthpXhJH'
     cliProjectName: 'demo'
     cliSources: '.'
     extraProperties: |

@@ -10,6 +10,13 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- script: |
+    npm install -g @angular/cli
+    npm install
+  displayName: 'npm install and build'
+- script: |
+    npm run test
+  displayName: 'npm run test'
 - task: SonarQubePrepare@5
   inputs:
     SonarQube: 'AZURE_TO_SONAR_2'
@@ -26,7 +33,6 @@ steps:
       sonar.test.inclusions=**/*.spec.ts
 
 - task: SonarQubeAnalyze@5
-- task: SonarQubePublish@5
   inputs:
     pollingTimeoutSec: '300'
 - task: NodeTool@0
@@ -34,9 +40,7 @@ steps:
     versionSpec: '12.x'
   displayName: 'Install Node.js'
 
-
 - script: |
-    npm install -g @angular/cli
-    npm install
     ng build --prod
   displayName: 'npm install and build'
+- task: SonarQubePublish@5

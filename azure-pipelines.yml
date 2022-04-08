@@ -18,7 +18,16 @@ steps:
     cliProjectKey: 'jalugoqu_prueba_AYAAufzpYfStsm0BZxBD'
     cliProjectName: 'demo'
     cliSources: '.'
-
+    extraProperties: |
+         
+      # Path is relative to the sonar-project.properties file. Replace "\" by "/" on Windows.
+      # This property is optional if sonar.modules is set.
+      sonar.sources=src
+      sonar.exclusions=**/node_modules/**,src/assets/**
+      sonar.javascript.lcov.reportPaths=coverage/demo/lcov-report/lcov.info
+      sonar.tests=src/alto-ui/
+      sonar.test.inclusions=**/*.spec.ts
+ 
 - task: SonarQubeAnalyze@5
 - task: SonarQubePublish@5
   inputs:

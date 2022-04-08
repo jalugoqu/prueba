@@ -21,7 +21,7 @@ steps:
     extraProperties: |
       sonar.sources=src
       sonar.exclusions=**/node_modules/**,src/assets/**
-      sonar.javascript.lcov.reportPaths=coverage/demo/lcov-report/lcov.info
+      sonar.typescript.lcov.reportPaths=coverage/demo/lcov-report/lcov.info
       sonar.tests=src
       sonar.test.inclusions=**/*.spec.ts
 
